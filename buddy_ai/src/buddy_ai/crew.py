@@ -1,6 +1,7 @@
 from crewai import Agent, Crew, Process, Task
 from crewai.project import CrewBase, agent, crew, task
 from crewai.agents.agent_builder.base_agent import BaseAgent
+from crewai_tools import PDFSearchTool
 from typing import List
 # If you want to run a snippet of code before or after the crew starts,
 # you can use the @before_kickoff and @after_kickoff decorators
@@ -20,16 +21,17 @@ class BuddyAi():
     # If you would like to add tools to your agents, you can learn more about it here:
     # https://docs.crewai.com/concepts/agents#agent-tools
     @agent
-    def researcher(self) -> Agent:
+    def pdf_reader(self) -> Agent:
         return Agent(
-            config=self.agents_config['researcher'], # type: ignore[index]
-            verbose=True
+            config=self.agents_config['pdf_reader'], # type: ignore[index]
+            verbose=True,
+            tools=[PDFSearchTool(pdf='C:\\Users\\sample_data\\david_matos.pdf')]
         )
 
     @agent
-    def reporting_analyst(self) -> Agent:
+    def summarizer(self) -> Agent:
         return Agent(
-            config=self.agents_config['reporting_analyst'], # type: ignore[index]
+            config=self.agents_config['summarizer'], # type: ignore[index]
             verbose=True
         )
 
@@ -37,17 +39,18 @@ class BuddyAi():
     # task dependencies, and task callbacks, check out the documentation:
     # https://docs.crewai.com/concepts/tasks#overview-of-a-task
     @task
-    def research_task(self) -> Task:
+    def reading_task(self) -> Task:
         return Task(
-            config=self.tasks_config['research_task'], # type: ignore[index]
+            config=self.tasks_config['reading_task']
+        )
+    
+    @task
+    def summarizing_task(self) -> Task:
+        return Task(
+            config=self.tasks_config['summarizing_task'],
+            output_file='output/summary.md'
         )
 
-    @task
-    def reporting_task(self) -> Task:
-        return Task(
-            config=self.tasks_config['reporting_task'], # type: ignore[index]
-            output_file='report.md'
-        )
 
     @crew
     def crew(self) -> Crew:
