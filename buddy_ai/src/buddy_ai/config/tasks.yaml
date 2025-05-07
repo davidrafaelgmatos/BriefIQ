@@ -1,6 +1,6 @@
 reading_task:
   description: >
-    Extract the entire text from the PDF document at C:\Users\Ricardo Amorim\IdeaProjects\sample_data\david_matos.pdf
+    Extract the entire text from the PDF document at C:\\Users\\sample_data\\david_matos.pdf
     Return the raw text content without modification
   expected_output: >
     The complete extracted text of the PDF Document.
