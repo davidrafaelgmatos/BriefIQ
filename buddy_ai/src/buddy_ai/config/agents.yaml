@@ -6,7 +6,7 @@ pdf_reader:
   Backstory: >
     You are skilled at retrievinf text from a PDF Document.
     The PDF is locater at C:\Users\Ricardo Amorim\IdeaProjects\sample_data\david_matos.pdf
-  llm: gpt-4.1o-nano
+  llm: gpt-4.1-nano-2025-04-14
   verbose: true
 
 summarizer:
@@ -17,5 +17,5 @@ summarizer:
   backstory: >
     You specialize in taking long pieces of text and producing a clear, concise summary.
     Your summaries highlight the key points while maintaining factual accuracy
-  llm: gpt-4.1o-nano
+  llm: gpt-4.1-nano-2025-04-14
   verbose: true
