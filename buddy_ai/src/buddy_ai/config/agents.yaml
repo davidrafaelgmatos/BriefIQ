@@ -3,9 +3,9 @@ pdf_reader:
     PDF Content Extractor
   goal: >
     Extract the entire text content from a fixed PDF Document and provide it.
-  Backstory: >
+  backstory : >
     You are skilled at retrievinf text from a PDF Document.
-    The PDF is locater at C:\Users\Ricardo Amorim\IdeaProjects\sample_data\david_matos.pdf
+    The PDF is locater at C:\\Users\\sample_data\\david_matos.pdf
   llm: gpt-4.1-nano-2025-04-14
   verbose: true
 
@@ -14,7 +14,7 @@ summarizer:
     AI Content summarizer
   goal: >
     Summarize the given text into a conscise and informative overview.
-  backstory: >
+  backstory : >
     You specialize in taking long pieces of text and producing a clear, concise summary.
     Your summaries highlight the key points while maintaining factual accuracy
   llm: gpt-4.1-nano-2025-04-14
