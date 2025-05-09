@@ -1,7 +1,7 @@
 [project]
-name = "buddy_ai"
+name = "brief_iq"
 version = "0.1.0"
-description = "buddy_ai using crewAI"
+description = "brief_iq using crewAI"
 authors = [{ name = "Your Name", email = "you@example.com" }]
 requires-python = ">=3.10,<3.13"
 dependencies = [
@@ -9,11 +9,11 @@ dependencies = [
 ]
 
 [project.scripts]
-buddy_ai = "buddy_ai.main:run"
-run_crew = "buddy_ai.main:run"
-train = "buddy_ai.main:train"
-replay = "buddy_ai.main:replay"
-test = "buddy_ai.main:test"
+brief_iq = "brief_iq.main:run"
+run_crew = "brief_iq.main:run"
+train = "brief_iq.main:train"
+replay = "brief_iq.main:replay"
+test = "brief_iq.main:test"
 
 [build-system]
 requires = ["hatchling"]
